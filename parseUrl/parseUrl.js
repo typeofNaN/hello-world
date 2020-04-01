@@ -17,6 +17,7 @@ function parseUrl(url) {
           ret[querys[0]] = querys[1];
         }
       }
+
       return ret;
     })(),
     file: (a.pathname.match(/\/([^\/?#]+)$/i) || [,''])[1],
