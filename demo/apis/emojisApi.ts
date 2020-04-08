@@ -1,9 +1,13 @@
-class emojis {
-  getEmojis({ $axios }: any) {
+export default class EmojisServer {
+  public axios: any
+
+  constructor($axios: any) {
+    this.axios = $axios
+  }
+
+  getEmojis() {
     return new Promise((resolve: Function, reject: Function) => {
-      resolve($axios.get('emojis'))
+      resolve(this.axios.$get('/emojis'))
     })
   }
 }
-
-export default new emojis
