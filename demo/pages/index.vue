@@ -32,7 +32,6 @@
   </v-layout>
 </template>
 
-
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { State, Getter, Mutation, namespace} from 'vuex-class';
