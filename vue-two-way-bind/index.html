@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>实现-vue-双向绑定</title>
+</head>
+<body>
+  <div id="practice">
+    <h2>实现-vue-双向绑定</h2>
+    <div v-text="name"></div>
+    <div v-text="desc"></div>
+    <input type="text" v-model="desc" />
+  </div>
+  <script src="./main.js"></script>
+  <script>
+    new Vue({
+      el: "#practice",
+      data: {
+        name: "lingzi",
+        desc: "i am so cute"
+      }
+    })
+  </script>
+</body>
+</html>
