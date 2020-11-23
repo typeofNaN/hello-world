@@ -6,38 +6,40 @@
  */
 
 function debounce(func, wait, immediate) {
-  let timeout;
+  let timeout
 
   return function() {
-    let context = this;
-    let args = arguments;
+    let context = this
+    let args = arguments
 
     if (timeout) {
-      clearTimeout(timeout);
+      clearTimeout(timeout)
     }
 
     if (immediate) {
-      var callNow = !timeout;
+      let callNow = !timeout
 
       timeout = setTimeout(() => {
-        timeout = null;
+        timeout = null
       }, wait)
 
       if (callNow) {
-        func.apply(context, args);
+        func.apply(context, args)
       }
     } else {
       timeout = setTimeout(() => {
-        func.apply(context, args);
-      }, wait);
+        func.apply(context, args)
+      }, wait)
     }
   }
 }
 
 function debounce2(fn, wait) {
-  var timeout = null;
+  let timeout = null
   return function() {
-    if (timeout !== null) clearTimeout(timeout);
-    timeout = setTimeout(fn, wait);
+    if (timeout !== null) {
+      clearTimeout(timeout)
+    }
+    timeout = setTimeout(fn, wait)
   }
 }

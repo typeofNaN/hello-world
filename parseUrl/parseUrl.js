@@ -1,5 +1,5 @@
 function parseUrl(url) {
-  var a =  document.createElement('a');
+  let a =  document.createElement('a');
   a.href = url;
 
   return {
@@ -9,9 +9,9 @@ function parseUrl(url) {
     port: a.port,
     query: a.search,
     params: (() => {
-      var ret = {}, querys = [];
-      var searchQuery = a.search.replace(/^\?/,'').split('&');
-      for (var i = 0;i < searchQuery.length; i++) {
+      let ret = {}, querys = [];
+      let searchQuery = a.search.replace(/^\?/,'').split('&');
+      for (let i = 0;i < searchQuery.length; i++) {
         if (searchQuery[i]) {
           querys = searchQuery[i].split('=');
           ret[querys[0]] = querys[1];

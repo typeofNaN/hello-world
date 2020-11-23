@@ -6,28 +6,28 @@
  */
 
 function throttle(func, wait ,type) {
-  if(type === 1) {
-    let previous = 0;
+  if (type === 1) {
+    let previous = 0
   } else if (type === 2) {
-    let timeout;
+    let timeout
   }
 
   return function() {
-    let context = this;
-    let args = arguments;
+    let context = this
+    let args = arguments
 
-    if(type === 1) {
-      let now = Date.now();
+    if (type === 1) {
+      let now = Date.now()
 
       if (now - previous > wait) {
-        func.apply(context, args);
-        previous = now;
+        func.apply(context, args)
+        previous = now
       }
     } else if (type === 2){
       if (!timeout) {
         timeout = setTimeout(() => {
-          timeout = null;
-          func.apply(context, args);
+          timeout = null
+          func.apply(context, args)
         }, wait)
       }
     }
@@ -35,16 +35,16 @@ function throttle(func, wait ,type) {
 }
 
 function throttle2(func, delay) {
-  var prev = Date.now();
+  let prev = Date.now()
 
   return function() {
-    var context = this;
-    var args = arguments;
-    var now = Date.now();
+    let context = this
+    let args = arguments
+    let now = Date.now()
 
     if (now - prev >= delay) {
-      func.apply(context, args);
-      prev = Date.now();
+      func.apply(context, args)
+      prev = Date.now()
     }
   }
 }

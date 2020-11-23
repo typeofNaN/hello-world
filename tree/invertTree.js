@@ -1,6 +1,6 @@
-var invertTree = function(root) {
+let invertTree = function(root) {
   if (root !== null) {
-    var temp = root.left;
+    let temp = root.left;
     root.left = root.right;
     root.right = temp;
 
