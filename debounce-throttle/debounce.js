@@ -1,5 +1,5 @@
 /**
- * @desc 函数防抖
+ * @description 函数防抖
  * @param func 函数
  * @param wait 延迟执行毫秒数
  * @param immediate true 表立即执行，false 表非立即执行
@@ -8,7 +8,7 @@
 function debounce(func, wait, immediate) {
   let timeout
 
-  return function() {
+  return function () {
     let context = this
     let args = arguments
 
@@ -36,7 +36,7 @@ function debounce(func, wait, immediate) {
 
 function debounce2(fn, wait) {
   let timeout = null
-  return function() {
+  return function () {
     if (timeout !== null) {
       clearTimeout(timeout)
     }

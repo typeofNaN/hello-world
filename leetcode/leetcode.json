@@ -1,18 +1,23 @@
 {
-  "leetcode": [
+  "leetCode": [
     {
       "no": 1,
-      "enname": "Two Sum",
-      "cnname": "两数之和",
+      "enName": "Two Sum",
+      "cnName": "两数之和",
       "grade": "简单",
-      "tags": ["数组", "哈希表"]
+      "tags": [
+        "数组",
+        "哈希表"
+      ]
     },
     {
       "no": 2,
-      "enname": "Add Two Number",
-      "cnname": "两数相加",
+      "enName": "Add Two Number",
+      "cnName": "两数相加",
       "grade": "中等",
-      "tags": ["链表"]
+      "tags": [
+        "链表"
+      ]
     }
   ]
 }

@@ -24,7 +24,7 @@ console.log(unique1(arr))
 function unique2(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
-      if(arr[i] == arr[j]) {    // 第一个等同于第二个，splice方法删除第二个
+      if (arr[i] == arr[j]) {    // 第一个等同于第二个，splice方法删除第二个
         arr.splice(j, 1)
         j--
       }
@@ -74,15 +74,15 @@ function unique4(arr) {
   }
 
   arr = arr.sort();
-  const arrry = [arr[0]];
+  const array = [arr[0]];
 
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i] !== arr[i-1]) {
-      arrry.push(arr[i])
+    if (arr[i] !== arr[i - 1]) {
+      array.push(arr[i])
     }
   }
 
-  return arrry
+  return array
 }
 console.log(unique4(arr))
 
@@ -98,18 +98,18 @@ function unique5(arr) {
     return
   }
 
-  const arrry = []
+  const array = []
   const obj = {}
 
   for (let i = 0; i < arr.length; i++) {
     if (!obj[arr[i]]) {
-      arrry.push(arr[i])
+      array.push(arr[i])
       obj[arr[i]] = 1
     } else {
       obj[arr[i]]++
     }
   }
-  return arrry
+  return array
 }
 console.log(unique5(arr))
 
@@ -125,10 +125,10 @@ function unique6(arr) {
     return
   }
 
-  const array =[]
+  const array = []
 
-  for(let i = 0; i < arr.length; i++) {
-    if( !array.includes(arr[i])) {    // includes 检测数组是否有某个值
+  for (let i = 0; i < arr.length; i++) {
+    if (!array.includes(arr[i])) {    // includes 检测数组是否有某个值
       array.push(arr[i])
     }
   }
@@ -147,7 +147,7 @@ console.log(unique6(arr))
 function unique7(arr) {
   const obj = {}
 
-  return arr.filter(function(item, index, arr) {
+  return arr.filter(function (item, index, arr) {
     return obj.hasOwnProperty(typeof item + item) ? false : (obj[typeof item + item] = true)
   })
 }
@@ -159,7 +159,7 @@ console.log(unique7(arr))
  * [1, "true", true, 15, false, undefined, null, "NaN", 0, "a", {…}, {…}]
  */
 function unique8(arr) {
-  return arr.filter(function(item, index, arr) {
+  return arr.filter(function (item, index, arr) {
     // 当前元素，在原始数组中的第一个索引 == 当前索引值，否则返回当前元素
     return arr.indexOf(item, 0) === index
   })
@@ -174,14 +174,14 @@ console.log(unique8(arr))
 function unique9(arr) {
   const len = arr.length
 
-  arr.sort(function(a, b) {    // 排序后更加方便去重
+  arr.sort(function (a, b) {    // 排序后更加方便去重
     return a - b
   })
 
   function loop(index) {
     if (index >= 1) {
       if (arr[index] === arr[index - 1]) {
-        arr.splice(index,1)
+        arr.splice(index, 1)
       }
 
       loop(index - 1)    // 递归loop，然后数组去重
@@ -204,9 +204,9 @@ function unique10(arr) {
   let array = new Array()    // 数组用于返回结果
 
   for (let i = 0; i < arr.length; i++) {
-    if(map.has(arr[i])) {    // 如果有该key值
+    if (map.has(arr[i])) {    // 如果有该key值
       map.set(arr[i], true)
-    } else { 
+    } else {
       map.set(arr[i], false)    // 如果没有该key值
       array.push(arr[i])
     }
@@ -222,6 +222,6 @@ console.log(unique10(arr))
  * [1, "true", true, 15, false, undefined, null, NaN, "NaN", 0, "a", {…}, {…}]
  */
 function unique11(arr) {
-  return arr.reduce((prev,cur) => prev.includes(cur) ? prev : [...prev,cur],[])
+  return arr.reduce((prev, cur) => prev.includes(cur) ? prev : [...prev, cur], [])
 }
 console.log(unique11(arr))

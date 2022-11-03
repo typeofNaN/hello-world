@@ -15,29 +15,31 @@ const isInArea = (point, areaArr) => {
 
   for (let i = -1, j = len - 1; ++i < len; j = i) {
     ((areaArr[i].longitude <= point.longitude && point.longitude < areaArr[j].longitude) || (areaArr[j].longitude <= point.longitude && point.longitude < areaArr[i].longitude)) &&
-    (point.latitude < (areaArr[j].latitude - areaArr[i].latitude) * (point.longitude - areaArr[i].longitude) / (areaArr[j].longitude - areaArr[i].longitude) + areaArr[i].latitude) &&
-    (inArea = !inArea)
+      (point.latitude < (areaArr[j].latitude - areaArr[i].latitude) * (point.longitude - areaArr[i].longitude) / (areaArr[j].longitude - areaArr[i].longitude) + areaArr[i].latitude) &&
+      (inArea = !inArea)
   }
 
   return inArea
 }
 
-const areaArr = [{
-  longitude: 1,
-  latitude: 1
-}, {
-  longitude: 1,
-  latitude: 3
-}, {
-  longitude: 3,
-  latitude: 3
-}, {
-  longitude: 2,
-  latitude: 2
-}, {
-  longitude: 3,
-  latitude: 1
-}]
+const areaArr = [
+  {
+    longitude: 1,
+    latitude: 1
+  }, {
+    longitude: 1,
+    latitude: 3
+  }, {
+    longitude: 3,
+    latitude: 3
+  }, {
+    longitude: 2,
+    latitude: 2
+  }, {
+    longitude: 3,
+    latitude: 1
+  }
+]
 
 const point = {
   longitude: 1,
