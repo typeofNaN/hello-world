@@ -1,6 +1,6 @@
 function parseUrl(url) {
-  let a = document.createElement('a');
-  a.href = url;
+  const a = document.createElement('a')
+  a.href = url
 
   return {
     source: url,
@@ -9,21 +9,22 @@ function parseUrl(url) {
     port: a.port,
     query: a.search,
     params: (() => {
-      let ret = {}, queryList = [];
-      let searchQuery = a.search.replace(/^\?/, '').split('&');
+      const ret = {}
+      const queryList = []
+      const searchQuery = a.search.replace(/^\?/, '').split('&')
       for (let i = 0; i < searchQuery.length; i++) {
         if (searchQuery[i]) {
-          queryList = searchQuery[i].split('=');
-          ret[queryList[0]] = queryList[1];
+          queryList = searchQuery[i].split('=')
+          ret[queryList[0]] = queryList[1]
         }
       }
 
-      return ret;
+      return ret
     })(),
     file: (a.pathname.match(/\/([^\/?#]+)$/i) || [, ''])[1],
     hash: a.hash.replace('#', ''),
     path: a.pathname.replace(/^([^\/])/, '/$1'),
     relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [, ''])[1],
     segments: a.pathname.replace(/^\//, '').split('/')
-  };
+  }
 }

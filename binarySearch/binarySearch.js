@@ -28,4 +28,4 @@ function findIndex(arr, value) {
   return -1
 }
 
-alert(findIndex(arr, 250))
+console.log(findIndex(arr, 250))

@@ -1,9 +1,10 @@
 /**
- * @param {ListNode} l1
- * @param {ListNode} l2
- * @return {ListNode}
+ * @description 两数相加
+ * @param { ListNode } l1
+ * @param { ListNode } l2
+ * @return { ListNode }
  */
-var addTwoNumbers = function (l1, l2) {
+const addTwoNumbers = (l1, l2) => {
   const result = p = {}
   while (l1 || l2) {
     // 求和
@@ -24,5 +25,6 @@ var addTwoNumbers = function (l1, l2) {
 
     p = p.next
   }
+
   return result
 }

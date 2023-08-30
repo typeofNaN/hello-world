@@ -1,22 +1,22 @@
 function selectSort(arr) {
-  let len = arr.length;
+  const len = arr.length
 
   for (let i = 0; i < len; i++) {
-    let min = i;
+    let min = i
 
     for (let j = i + 1; j < len; j++) {
       if (arr[j] < arr[min]) {
-        min = j;
+        min = j
       }
     }
 
     if (i != min) {
-      [arr[i], arr[min]] = [arr[min], arr[i]];
+      [arr[i], arr[min]] = [arr[min], arr[i]]
     }
   }
-  return arr;
+  return arr
 }
 
-let arr = [6, 5, 7, 1, 3, 4, 1, 7, 5, 2, 8, 6, 9];
-selectSort(arr);
-console.log(arr);
+const arr = [6, 5, 7, 1, 3, 4, 1, 7, 5, 2, 8, 6, 9]
+
+console.log(selectSort(arr))
